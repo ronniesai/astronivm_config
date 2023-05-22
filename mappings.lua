@@ -11,7 +11,7 @@ return {
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
-        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) require("astronvim.utils.buffer").close(bufnr) end)
+        require("astronvim.utils.status").heirline.buffer_pickef(function(bufnr) require("astronvim.utils.buffer").close(bufnr) end)
       end,
       desc = "Pick to close",
     },
@@ -20,9 +20,32 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<leader>j"] = { "<cmd>HopWord<cr>" },
+    ["<S-e>"] = { "<C-e>" },
+    ["<S-w>"] = { "<C-y>" },
+    ["<leader>v"] = { "<CMD>vsplit<CR>" },
+    ["<leader>r"] = { "<CMD>Telescope lsp_references<CR>" },
   },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
+  i = {
+    ["<C-s>"] = { "<ESC><CMD>update<CR>" },
+    ["<A-j>"] = { "<Down>" },
+    ["<A-k>"] = { "<Up>" },
+    ["<A-h>"] = { "<Left>" },
+    ["<A-l>"] = { "<Right>" },
+    ["<A-a>"] = { "<Home>" },
+    ["<A-e>"] = { "<End>" },
+  },   
+  v = {
+    ["jk"] = { "<ESC>"},
+    ["<S-j>"] = { "<down>" },
+    ["<S-k>"] = { "<up>" },
+    ["<S-h>"] = { "<left>" },
+    ["<S-l>"] = { "<right>" },
+    ["<S-a>"] = { "<home>" },
+    ["<S-e>"] = { "<end>" },
+  }
 }
